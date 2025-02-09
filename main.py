@@ -25,6 +25,8 @@ def save_password(password, filename='passwords.json'):
             data = json.load(file)
     except FileNotFoundError:
         data = []
+    except json.JSONDecodeError:
+        data = []
 
     data.append(password_data)
 
